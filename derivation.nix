@@ -3,7 +3,7 @@
 , glfw, glew, xorg }:
 
 stdenv.mkDerivation rec {
-  pname = "mesontest";
+  pname = "gedw";
   version = "0.1";
 
   src = ./.;

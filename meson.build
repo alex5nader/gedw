@@ -1,4 +1,7 @@
-project('tutorial', 'cpp')
+project(
+    'gedw', 'cpp',
+    default_options: ['cpp_std=c++17'],
+)
 
 gedw_dependencies = [
   dependency('glfw3'),
@@ -12,9 +15,9 @@ gedw_sources = [
 add_project_arguments('-DTESTDEF', language: 'cpp')
 
 executable(
-  'demo',
-  gedw_sources,
-  dependencies: gedw_dependencies,
-  install: true,
-  cpp_pch: 'src/pch.h',
+    'gedw',
+    gedw_sources,
+    dependencies: gedw_dependencies,
+    install: true,
+    cpp_pch: 'src/pch.h',
 )
