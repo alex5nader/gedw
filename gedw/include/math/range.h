@@ -5,7 +5,7 @@
         return Range<T>(this->_min + t, this->_max + t); \
     }
 
-namespace math {
+namespace gedw::math {
     struct RangeInclusivity {
         bool min = false, max = false;
     };
@@ -63,3 +63,5 @@ namespace math {
         T min, max;
     };
 }
+
+#undef MATH_OPERATOR_SCALAR

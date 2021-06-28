@@ -1,7 +1,5 @@
 #pragma once
 
-#define GLUE(X, Y) X ## Y
-
 #define ASSIGN_OPERATOR_SCALAR(OP) \
     Vec2<T>& operator OP(const T& t) { \
         this->x OP t; \
@@ -26,7 +24,7 @@
         return Vec2(this->x OP other.x, this->y OP other.y); \
     }
 
-namespace math {
+namespace gedw::math {
     template<typename T>
     class Vec2 {
     public:
