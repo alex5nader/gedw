@@ -10,6 +10,7 @@ gedw_dependencies = [
 
 gedw_sources = [
   'src/Main.cpp',
+  'src/gfx/Core.cpp',
 ]
 
 add_project_arguments('-DTESTDEF', language: 'cpp')
