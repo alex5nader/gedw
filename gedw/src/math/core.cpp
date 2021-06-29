@@ -2,7 +2,6 @@
 
 namespace gedw::math {
     float EPSILON = 0.0001f;
-
     void setEpsilon(float epsilon) {
         EPSILON = epsilon;
     }

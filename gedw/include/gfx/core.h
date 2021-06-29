@@ -5,6 +5,15 @@
 #include "util.h"
 
 namespace gedw::gfx {
+    struct Color {
+        float r = 0.0f, g = 0.0f, b = 0.0f;
+    };
+    
+    struct WindowOptions {
+        Color clear = {};
+        bool resizable = false;
+    };
+
     struct OpenGLInstance {
         static OpenGLInstance FAILED;
 
@@ -15,5 +24,5 @@ namespace gedw::gfx {
         void end();
     };
 
-    OpenGLInstance init(uint width, uint height, const char* title);
+    OpenGLInstance init(uint width, uint height, const char* title, const WindowOptions& options = {});
 }

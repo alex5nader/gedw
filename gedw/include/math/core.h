@@ -58,7 +58,7 @@ namespace gedw::math {
         return sqrt(dx * dx + dy * dy);
     }
 
-    float EPSILON;
+    extern float EPSILON;
     void setEpison(float f);
     template<typename T>
     bool isZero(const T& t) { return abs(t) <= EPSILON; }

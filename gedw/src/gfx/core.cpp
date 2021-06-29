@@ -5,7 +5,6 @@
 #include "gfx/core.h"
 
 namespace gedw::gfx {
-
     OpenGLInstance OpenGLInstance::FAILED = { .window = nullptr };
 
     bool OpenGLInstance::isRunning() const {
@@ -22,14 +21,14 @@ namespace gedw::gfx {
         glfwTerminate();
     }
 
-    OpenGLInstance init(uint width, uint height, const char* title) {
+    OpenGLInstance init(uint width, uint height, const char* title, const WindowOptions& options) {
         if (!glfwInit()) {
             printf("Failed to initialize GLFW, aborting...\n");
             glfwTerminate();
             return OpenGLInstance::FAILED;
         }
 
-        glfwWindowHint(GLFW_RESIZABLE, false);
+        glfwWindowHint(GLFW_RESIZABLE, options.resizable);
         glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
         glfwWindowHint(GLFW_OPENGL_CORE_PROFILE, GLFW_OPENGL_CORE_PROFILE);
@@ -52,7 +51,7 @@ namespace gedw::gfx {
             return OpenGLInstance::FAILED;
         }
 
-        glClearColor(0.3f, 0.0f, 0.5f, 1.0f);
+        glClearColor(options.clear.r, options.clear.g, options.clear.b, 1.0f);
         glEnable(GL_BLEND);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
