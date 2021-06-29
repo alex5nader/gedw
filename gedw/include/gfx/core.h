@@ -2,7 +2,7 @@
 
 #include <GLFW/glfw3.h>
 
-#include "util.h"
+#include "util/types.h"
 
 namespace gedw::gfx {
     struct Color {
@@ -12,17 +12,22 @@ namespace gedw::gfx {
     struct WindowOptions {
         Color clear = {};
         bool resizable = false;
+        bool debug = true;
     };
 
-    struct OpenGLInstance {
-        static OpenGLInstance FAILED;
+    class GlInstance {
+    public:
+        static GlInstance FAILED;
 
-        GLFWwindow* window;
+        static GlInstance init(uint width, uint height, const char* title, const WindowOptions& options = {});
+        ~GlInstance();
+
+        GLFWwindow* const window;
 
         bool isRunning() const;
         bool failed() const;
-        void end();
+    
+    private:
+        GlInstance(GLFWwindow* window);
     };
-
-    OpenGLInstance init(uint width, uint height, const char* title, const WindowOptions& options = {});
 }

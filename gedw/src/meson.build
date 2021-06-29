@@ -1,6 +1,10 @@
 gedw_sources = [
     'main.cpp',
+    'gfx/buffer/index.cpp',
+    'gfx/buffer/vertex.cpp',
+    'gfx/array.cpp',
     'gfx/core.cpp',
+    'gfx/object.cpp',
     'math/core.cpp',
 ]
 
