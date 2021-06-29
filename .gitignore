@@ -1,2 +1,6 @@
 # nix-build output
 result
+
+# editor
+.vscode
+/build.sh
