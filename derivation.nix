@@ -1,5 +1,5 @@
 { stdenv
-, meson, ninja, pkg-config
+, meson, ninja, pkg-config, fd
 , glfw, glew, xorg }:
 
 stdenv.mkDerivation rec {
@@ -8,6 +8,6 @@ stdenv.mkDerivation rec {
 
   src = ./gedw;
 
-  nativeBuildInputs = [ meson ninja pkg-config ];
+  nativeBuildInputs = [ meson ninja pkg-config fd ];
   buildInputs = [ glfw glew xorg.libX11 ];
 }

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <GL/glew.h> // IMPORTANT: unused, but GLEW *must* be imported before anything that uses gl (including glfw)
 #include <GLFW/glfw3.h>
 
 #include "util/types.h"

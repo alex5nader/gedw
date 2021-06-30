@@ -1,4 +1,4 @@
-#include "gfx/object.h"
+#include "gfx/globject.h"
 
 namespace gedw::gfx {
     GlObject::GlObject(uint id) : id(id) {}

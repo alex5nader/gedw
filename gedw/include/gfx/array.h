@@ -2,7 +2,7 @@
 
 #include <initializer_list>
 
-#include "gfx/object.h"
+#include "gfx/globject.h"
 #include "gfx/buffer/vertex.h"
 #include "util/slice.h"
 

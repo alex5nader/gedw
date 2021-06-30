@@ -1,7 +1,7 @@
 #pragma once
 
 #include "GL/glew.h"
-#include "gfx/object.h"
+#include "gfx/globject.h"
 #include "util/slice.h"
 
 namespace gedw::gfx {
